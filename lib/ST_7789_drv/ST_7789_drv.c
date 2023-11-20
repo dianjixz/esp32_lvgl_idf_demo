@@ -133,7 +133,7 @@ static int spi_init(void)
     };
 
     spi_device_interface_config_t devcfg = {
-        .clock_speed_hz=40*1000*1000,
+        .clock_speed_hz=50*1000*1000,
         .mode = 3,
         .spics_io_num = -1,
         .queue_size = 1,

@@ -15,9 +15,10 @@
 
 #define MY_DISP_HOR_RES (240) // w
 #define MY_DISP_VER_RES (320) // h
+#define BUFF_LEN 5
 
 static lv_disp_draw_buf_t draw_buf_dsc_1;
-static lv_color_t buf_1[MY_DISP_HOR_RES * 2];
+static lv_color_t buf_1[MY_DISP_HOR_RES * BUFF_LEN];
 static lv_disp_drv_t disp_drv;
 static void disp_flush(lv_disp_drv_t *disp_drv, const lv_area_t *area, lv_color_t *color_p)
 {
@@ -71,7 +72,7 @@ void app_main(void)
 	lcd_clear();
 
 	lv_init();
-	lv_disp_draw_buf_init(&draw_buf_dsc_1, buf_1, NULL, MY_DISP_HOR_RES * 2);
+	lv_disp_draw_buf_init(&draw_buf_dsc_1, buf_1, NULL, MY_DISP_HOR_RES * BUFF_LEN);
 	lv_disp_drv_init(&disp_drv);
 	disp_drv.hor_res = MY_DISP_HOR_RES;
 	disp_drv.ver_res = MY_DISP_VER_RES;
