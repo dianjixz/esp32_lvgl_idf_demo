@@ -14,7 +14,7 @@
 #include "ui/ui.h"
 
 #define MY_DISP_HOR_RES (240) // w
-#define MY_DISP_VER_RES (320) // h
+#define MY_DISP_VER_RES (280) // h
 #define BUFF_LEN 5
 
 static lv_disp_draw_buf_t draw_buf_dsc_1;
@@ -53,8 +53,8 @@ void taskB(void *ptParam)
 
 		xSemaphoreTake(xHandler, portMAX_DELAY);
 		lv_arc_set_value(ui_Arc2, mkasd);
-		char nihaoasd[10];
-		sprintf(nihaoasd, "%d", mkasd);
+		char nihaoasd[16];
+		sprintf(nihaoasd, "%i", mkasd);
 		lv_label_set_text(ui_Label2, nihaoasd);
 		xSemaphoreGive(xHandler);
 		mkasd += 5;
